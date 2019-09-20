@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import com.educandoweb.course.entities.pk.OrderItemPk;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_order_item")
@@ -15,7 +16,7 @@ public class OrderItem implements Serializable {
 
 	// Declarando a classe OrderItemPk
 	@EmbeddedId
-	private OrderItemPk id;
+	private OrderItemPk id = new OrderItemPk();
 
 	private Integer price;
 	private Double quantity;
@@ -34,6 +35,7 @@ public class OrderItem implements Serializable {
 	}
 
 	// Declarando o metado Order para retorna ID
+	@JsonIgnore
 	public Order getOrder() {
 		return id.getOrder();
 
