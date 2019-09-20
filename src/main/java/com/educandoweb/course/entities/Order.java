@@ -30,7 +30,7 @@ public class Order implements Serializable {
 	private int orderStatus;
 	// Declarando a classe User para associação
 	@ManyToOne
-	@JoinColumn(name = "client_id")
+	@JoinColumn(name = "client_id") // @JoinColumn client_id e a FK fazendo a junção da tabela USER
 	private User client;
 
 	public Order() {
