@@ -72,6 +72,10 @@ public class OrderItem implements Serializable {
 	public void setQuantity(Double quantity) {
 		this.quantity = quantity;
 	}
+	// Metado Subtotal dos product
+	public Double getSubTotal() {
+		return price * quantity;
+	}
 
 	@Override
 	public int hashCode() {
